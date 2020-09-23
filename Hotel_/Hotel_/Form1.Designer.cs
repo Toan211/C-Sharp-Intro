@@ -115,6 +115,7 @@
             this.TB_MP.Name = "TB_MP";
             this.TB_MP.Size = new System.Drawing.Size(236, 20);
             this.TB_MP.TabIndex = 7;
+            this.TB_MP.Text = "A001";
             // 
             // TB_GP
             // 
@@ -122,6 +123,7 @@
             this.TB_GP.Name = "TB_GP";
             this.TB_GP.Size = new System.Drawing.Size(236, 20);
             this.TB_GP.TabIndex = 9;
+            this.TB_GP.Text = "150000";
             // 
             // TB_Day
             // 
@@ -129,6 +131,7 @@
             this.TB_Day.Name = "TB_Day";
             this.TB_Day.Size = new System.Drawing.Size(236, 20);
             this.TB_Day.TabIndex = 11;
+            this.TB_Day.Text = "0";
             // 
             // BT_TP
             // 
@@ -208,36 +211,42 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(688, 117);
             this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Ma_Phong
+            // Column1
             // 
             this.Ma_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Ma_Phong.HeaderText = "Ma_Phong";
-            this.Ma_Phong.Name = "Ma_Phong";
+            this.Ma_Phong.Name = "Column1";
+            this.Ma_Phong.ReadOnly = true;
             // 
-            // Loai_Phong
+            // Column2
             // 
             this.Loai_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Loai_Phong.HeaderText = "Loai_Phong";
-            this.Loai_Phong.Name = "Loai_Phong";
+            this.Loai_Phong.Name = "Column2";
+            this.Loai_Phong.ReadOnly = true;
             // 
             // Gia_Phong
             // 
             this.Gia_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Gia_Phong.HeaderText = "Gia_Phong";
             this.Gia_Phong.Name = "Gia_Phong";
+            this.Gia_Phong.ReadOnly = true;
             // 
             // TT_Phong
             // 
             this.TT_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TT_Phong.HeaderText = "TT_Phong";
             this.TT_Phong.Name = "TT_Phong";
+            this.TT_Phong.ReadOnly = true;
             // 
             // So_Ngay
             // 
             this.So_Ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.So_Ngay.HeaderText = "So_Ngay";
             this.So_Ngay.Name = "So_Ngay";
+            this.So_Ngay.ReadOnly = true;
             // 
             // Form1
             // 
