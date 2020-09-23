@@ -17,6 +17,9 @@ namespace Hotel_
             InitializeComponent();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
