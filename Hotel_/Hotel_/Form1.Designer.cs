@@ -45,6 +45,11 @@
             this.CB_LP = new System.Windows.Forms.ComboBox();
             this.CB_TTP = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Ma_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.So_Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -133,6 +138,7 @@
             this.BT_TP.TabIndex = 12;
             this.BT_TP.Text = "Thêm Phòng";
             this.BT_TP.UseVisualStyleBackColor = true;
+            this.BT_TP.Click += new System.EventHandler(this.BT_TP_Click);
             // 
             // BT_DP
             // 
@@ -142,6 +148,7 @@
             this.BT_DP.TabIndex = 13;
             this.BT_DP.Text = "Đặt Phòng";
             this.BT_DP.UseVisualStyleBackColor = true;
+            this.BT_DP.Click += new System.EventHandler(this.BT_DP_Click);
             // 
             // BT_HP
             // 
@@ -151,6 +158,7 @@
             this.BT_HP.TabIndex = 14;
             this.BT_HP.Text = "Hủy Phòng";
             this.BT_HP.UseVisualStyleBackColor = true;
+            this.BT_HP.Click += new System.EventHandler(this.BT_HP_Click);
             // 
             // BT_TT
             // 
@@ -160,6 +168,7 @@
             this.BT_TT.TabIndex = 15;
             this.BT_TT.Text = "Thanh toán";
             this.BT_TT.UseVisualStyleBackColor = true;
+            this.BT_TT.Click += new System.EventHandler(this.BT_TT_Click);
             // 
             // CB_LP
             // 
@@ -189,11 +198,46 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ma_Phong,
+            this.Loai_Phong,
+            this.Gia_Phong,
+            this.TT_Phong,
+            this.So_Ngay});
             this.dataGridView1.Location = new System.Drawing.Point(52, 332);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(688, 117);
             this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Ma_Phong
+            // 
+            this.Ma_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ma_Phong.HeaderText = "Ma_Phong";
+            this.Ma_Phong.Name = "Ma_Phong";
+            // 
+            // Loai_Phong
+            // 
+            this.Loai_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Loai_Phong.HeaderText = "Loai_Phong";
+            this.Loai_Phong.Name = "Loai_Phong";
+            // 
+            // Gia_Phong
+            // 
+            this.Gia_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gia_Phong.HeaderText = "Gia_Phong";
+            this.Gia_Phong.Name = "Gia_Phong";
+            // 
+            // TT_Phong
+            // 
+            this.TT_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TT_Phong.HeaderText = "TT_Phong";
+            this.TT_Phong.Name = "TT_Phong";
+            // 
+            // So_Ngay
+            // 
+            this.So_Ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.So_Ngay.HeaderText = "So_Ngay";
+            this.So_Ngay.Name = "So_Ngay";
             // 
             // Form1
             // 
@@ -243,6 +287,11 @@
         private System.Windows.Forms.ComboBox CB_LP;
         private System.Windows.Forms.ComboBox CB_TTP;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai_Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia_Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TT_Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn So_Ngay;
     }
 }
 
