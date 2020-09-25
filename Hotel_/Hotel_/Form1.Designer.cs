@@ -45,8 +45,8 @@
             this.CB_LP = new System.Windows.Forms.ComboBox();
             this.CB_TTP = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Ma_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TT_Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.So_Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -202,8 +202,8 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ma_Phong,
-            this.Loai_Phong,
+            this.Column1,
+            this.Column2,
             this.Gia_Phong,
             this.TT_Phong,
             this.So_Ngay});
@@ -215,17 +215,17 @@
             // 
             // Column1
             // 
-            this.Ma_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ma_Phong.HeaderText = "Ma_Phong";
-            this.Ma_Phong.Name = "Column1";
-            this.Ma_Phong.ReadOnly = true;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Ma_Phong";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Loai_Phong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Loai_Phong.HeaderText = "Loai_Phong";
-            this.Loai_Phong.Name = "Column2";
-            this.Loai_Phong.ReadOnly = true;
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Loai_Phong";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Gia_Phong
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.LB_MP);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hotel_cal";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -301,6 +301,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia_Phong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TT_Phong;
         private System.Windows.Forms.DataGridViewTextBoxColumn So_Ngay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
 
