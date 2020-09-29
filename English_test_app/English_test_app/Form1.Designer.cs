@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txt_Box_ = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_Dir_ = new System.Windows.Forms.TextBox();
             this.txt_Name_ = new System.Windows.Forms.TextBox();
@@ -43,18 +43,21 @@
             this.bt_Answer_ = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Col_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // txt_Box_
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(295, 25);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(493, 413);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txt_Box_.Location = new System.Drawing.Point(295, 25);
+            this.txt_Box_.Name = "txt_Box_";
+            this.txt_Box_.Size = new System.Drawing.Size(493, 413);
+            this.txt_Box_.TabIndex = 0;
+            this.txt_Box_.Text = "";
             // 
             // groupBox1
             // 
@@ -94,6 +97,7 @@
             this.bt_File_Read_.TabIndex = 6;
             this.bt_File_Read_.Text = "Đọc file";
             this.bt_File_Read_.UseVisualStyleBackColor = true;
+            this.bt_File_Read_.Click += new System.EventHandler(this.bt_File_Read__Click);
             // 
             // label1
             // 
@@ -180,10 +184,41 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_1,
+            this.Col_2,
+            this.Col_3});
             this.dataGridView1.Location = new System.Drawing.Point(12, 266);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(277, 172);
             this.dataGridView1.TabIndex = 13;
+            // 
+            // Col_1
+            // 
+            this.Col_1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Col_1.Frozen = true;
+            this.Col_1.HeaderText = "Question";
+            this.Col_1.Name = "Col_1";
+            this.Col_1.ReadOnly = true;
+            this.Col_1.Width = 70;
+            // 
+            // Col_2
+            // 
+            this.Col_2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Col_2.Frozen = true;
+            this.Col_2.HeaderText = "Answer";
+            this.Col_2.Name = "Col_2";
+            this.Col_2.ReadOnly = true;
+            this.Col_2.Width = 70;
+            // 
+            // Col_3
+            // 
+            this.Col_3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Col_3.Frozen = true;
+            this.Col_3.HeaderText = "Result";
+            this.Col_3.Name = "Col_3";
+            this.Col_3.ReadOnly = true;
+            this.Col_3.Width = 70;
             // 
             // Form1
             // 
@@ -194,7 +229,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txt_Box_);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -209,7 +244,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txt_Box_;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_Dir_;
@@ -224,6 +259,9 @@
         private System.Windows.Forms.Button bt_Answer_;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_3;
     }
 }
 
