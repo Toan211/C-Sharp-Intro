@@ -87,10 +87,10 @@ namespace folder
             {
                 string FileNumb = Convert.ToString(i);
                 string FileName = DirectoryPath + "/" + File1_Box_Name_.Text + FileNumb;
-                using (File.Create(FileName + ".txt")) ;
+                using (File.Create(FileName + ".txt"));
                 
             }
-           
+            txt_Box_.Text = "Da tao" + n + " file ";
         }
 
         private void File1_BT_del__Click(object sender, EventArgs e)
@@ -101,12 +101,27 @@ namespace folder
                 
             string FileName = DirectoryPath + "/" + File1_Box_Del_.Text;
             File.Delete(FileName + ".txt");
-            
+
+            txt_Box_.Text = "Da xoa file" + FileName + ".txt";
         }
 
         private void File1_BT_check__Click(object sender, EventArgs e)
         {
+            txt_Box_.Text = "";
+            string DirectoryPath = Folder_Box_Disk_.Text + Folder_file_.Text;
 
+            string FileName = DirectoryPath + "/" + File1_Box_Del_.Text;
+
+            DirectoryInfo DInfo = new DirectoryInfo(DirectoryPath);
+
+            if (File.Exists(FileName + ".txt"))
+            {
+                txt_Box_.Text = "file co ton tai";
+            }
+            else
+            {
+                txt_Box_.Text = "file ko ton tai";
+            }
         }
     }
 }
