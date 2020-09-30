@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Compression;
 
 namespace folder
 {
@@ -73,8 +74,9 @@ namespace folder
             }
         }
 
-        #endregion
+#endregion
 
+#region Create_File
         private void File1_BT_create__Click(object sender, EventArgs e)
         {
             txt_Box_.Text = "";
@@ -123,5 +125,77 @@ namespace folder
                 txt_Box_.Text = "file ko ton tai";
             }
         }
+
+
+
+
+        #endregion
+
+#region Rd_file
+        private void file2_BT_read__Click(object sender, EventArgs e)
+        {
+            txt_Box_.Text = "";
+
+            string filePath = File2_dir_.Text + "/" + File2_Box_Name_.Text;
+            StreamReader rd = new StreamReader(filePath) ;
+            try
+            {
+                string Test = rd.ReadToEnd();
+
+                if (File.Exists(filePath))
+                {
+                    txt_Box_.Text = Test;
+                }
+                else
+                {
+                    txt_Box_.Text = "file ko ton tai";
+                }
+            }
+            finally
+            {
+                rd.Dispose();
+            }
+            //File.Delete(filePath);
+
+        }
+
+        private void file2_BT_wrt__Click(object sender, EventArgs e)
+        {
+            
+            string filePath = File2_dir_.Text + "/" + File2_Box_Name_.Text;
+            
+            StreamWriter sw = new StreamWriter(filePath) ;
+            try
+            {
+                sw.WriteLine(txt_Box_.Text);
+
+                sw.Flush();
+
+            }
+            finally
+            {
+                sw.Dispose();
+            }
+            //File.Delete(filePath);
+            sw.Close();
+
+
+
+        }
+
+
+
+        #endregion
+
+        private void zip_bt_comp__Click(object sender, EventArgs e)
+        {
+
+            string filepath = zip_bt_comp_.Text;
+
+            string zip = zip_bt_comp_.Text + ".zip";
+
+            
+        }
     }
+
 }

@@ -50,15 +50,15 @@
             this.File1_Box_Del_ = new System.Windows.Forms.TextBox();
             this.txt_Box_ = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.file2_BT_wrt_ = new System.Windows.Forms.Button();
+            this.file2_BT_read_ = new System.Windows.Forms.Button();
             this.File2_Box_Name_ = new System.Windows.Forms.TextBox();
             this.File2_dir_ = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.zip_bt_comp_ = new System.Windows.Forms.Button();
+            this.zip_bt_extr_ = new System.Windows.Forms.Button();
             this.Zip_Box_extr_ = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Zip_Box_comp_ = new System.Windows.Forms.TextBox();
@@ -293,8 +293,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.Controls.Add(this.button11);
+            this.groupBox3.Controls.Add(this.file2_BT_wrt_);
+            this.groupBox3.Controls.Add(this.file2_BT_read_);
             this.groupBox3.Controls.Add(this.File2_Box_Name_);
             this.groupBox3.Controls.Add(this.File2_dir_);
             this.groupBox3.Controls.Add(this.label7);
@@ -306,23 +306,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "FILE";
             // 
-            // button10
+            // file2_BT_wrt_
             // 
-            this.button10.Location = new System.Drawing.Point(124, 144);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 8;
-            this.button10.Text = "Ghi file";
-            this.button10.UseVisualStyleBackColor = true;
+            this.file2_BT_wrt_.Location = new System.Drawing.Point(124, 144);
+            this.file2_BT_wrt_.Name = "file2_BT_wrt_";
+            this.file2_BT_wrt_.Size = new System.Drawing.Size(75, 23);
+            this.file2_BT_wrt_.TabIndex = 8;
+            this.file2_BT_wrt_.Text = "Ghi file";
+            this.file2_BT_wrt_.UseVisualStyleBackColor = true;
+            this.file2_BT_wrt_.Click += new System.EventHandler(this.file2_BT_wrt__Click);
             // 
-            // button11
+            // file2_BT_read_
             // 
-            this.button11.Location = new System.Drawing.Point(22, 144);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "Đọc file";
-            this.button11.UseVisualStyleBackColor = true;
+            this.file2_BT_read_.Location = new System.Drawing.Point(22, 144);
+            this.file2_BT_read_.Name = "file2_BT_read_";
+            this.file2_BT_read_.Size = new System.Drawing.Size(75, 23);
+            this.file2_BT_read_.TabIndex = 4;
+            this.file2_BT_read_.Text = "Đọc file";
+            this.file2_BT_read_.UseVisualStyleBackColor = true;
+            this.file2_BT_read_.Click += new System.EventHandler(this.file2_BT_read__Click);
             // 
             // File2_Box_Name_
             // 
@@ -330,6 +332,7 @@
             this.File2_Box_Name_.Name = "File2_Box_Name_";
             this.File2_Box_Name_.Size = new System.Drawing.Size(100, 20);
             this.File2_Box_Name_.TabIndex = 3;
+            this.File2_Box_Name_.Text = "TTT.txt";
             // 
             // File2_dir_
             // 
@@ -337,7 +340,7 @@
             this.File2_dir_.Name = "File2_dir_";
             this.File2_dir_.Size = new System.Drawing.Size(100, 20);
             this.File2_dir_.TabIndex = 2;
-            this.File2_dir_.Text = "C:\\\\";
+            this.File2_dir_.Text = "C:\\\\Users\\Admin\\Desktop\\";
             // 
             // label7
             // 
@@ -359,8 +362,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.zip_bt_comp_);
+            this.groupBox4.Controls.Add(this.zip_bt_extr_);
             this.groupBox4.Controls.Add(this.Zip_Box_extr_);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.Zip_Box_comp_);
@@ -372,23 +375,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ZIP";
             // 
-            // button9
+            // zip_bt_comp_
             // 
-            this.button9.Location = new System.Drawing.Point(22, 151);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 7;
-            this.button9.Text = "Nén file";
-            this.button9.UseVisualStyleBackColor = true;
+            this.zip_bt_comp_.Location = new System.Drawing.Point(22, 151);
+            this.zip_bt_comp_.Name = "zip_bt_comp_";
+            this.zip_bt_comp_.Size = new System.Drawing.Size(75, 23);
+            this.zip_bt_comp_.TabIndex = 7;
+            this.zip_bt_comp_.Text = "Nén file";
+            this.zip_bt_comp_.UseVisualStyleBackColor = true;
+            this.zip_bt_comp_.Click += new System.EventHandler(this.zip_bt_comp__Click);
             // 
-            // button8
+            // zip_bt_extr_
             // 
-            this.button8.Location = new System.Drawing.Point(124, 151);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Giải nén file";
-            this.button8.UseVisualStyleBackColor = true;
+            this.zip_bt_extr_.Location = new System.Drawing.Point(124, 151);
+            this.zip_bt_extr_.Name = "zip_bt_extr_";
+            this.zip_bt_extr_.Size = new System.Drawing.Size(75, 23);
+            this.zip_bt_extr_.TabIndex = 6;
+            this.zip_bt_extr_.Text = "Giải nén file";
+            this.zip_bt_extr_.UseVisualStyleBackColor = true;
             // 
             // Zip_Box_extr_
             // 
@@ -396,6 +400,7 @@
             this.Zip_Box_extr_.Name = "Zip_Box_extr_";
             this.Zip_Box_extr_.Size = new System.Drawing.Size(100, 20);
             this.Zip_Box_extr_.TabIndex = 5;
+            this.Zip_Box_extr_.Text = "C:\\\\Users\\Admin\\Desktop\\WW";
             // 
             // label10
             // 
@@ -412,6 +417,7 @@
             this.Zip_Box_comp_.Name = "Zip_Box_comp_";
             this.Zip_Box_comp_.Size = new System.Drawing.Size(100, 20);
             this.Zip_Box_comp_.TabIndex = 4;
+            this.Zip_Box_comp_.Text = "C:\\\\Users\\Admin\\Desktop\\WW";
             // 
             // label9
             // 
@@ -481,15 +487,15 @@
         private System.Windows.Forms.TextBox File1_Box_Del_;
         private System.Windows.Forms.RichTextBox txt_Box_;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button file2_BT_read_;
         private System.Windows.Forms.TextBox File2_Box_Name_;
         private System.Windows.Forms.TextBox File2_dir_;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button file2_BT_wrt_;
+        private System.Windows.Forms.Button zip_bt_comp_;
+        private System.Windows.Forms.Button zip_bt_extr_;
         private System.Windows.Forms.TextBox Zip_Box_extr_;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Zip_Box_comp_;
