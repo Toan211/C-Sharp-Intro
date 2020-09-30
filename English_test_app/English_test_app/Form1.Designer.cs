@@ -171,6 +171,7 @@
             this.bt_Answer_.TabIndex = 7;
             this.bt_Answer_.Text = "Xem đáp án";
             this.bt_Answer_.UseVisualStyleBackColor = true;
+            this.bt_Answer_.Click += new System.EventHandler(this.bt_Answer__Click);
             // 
             // label3
             // 
@@ -199,7 +200,6 @@
             this.Col_1.Frozen = true;
             this.Col_1.HeaderText = "Question";
             this.Col_1.Name = "Col_1";
-            this.Col_1.ReadOnly = true;
             this.Col_1.Width = 70;
             // 
             // Col_2
@@ -208,7 +208,6 @@
             this.Col_2.Frozen = true;
             this.Col_2.HeaderText = "Answer";
             this.Col_2.Name = "Col_2";
-            this.Col_2.ReadOnly = true;
             this.Col_2.Width = 70;
             // 
             // Col_3
@@ -217,7 +216,6 @@
             this.Col_3.Frozen = true;
             this.Col_3.HeaderText = "Result";
             this.Col_3.Name = "Col_3";
-            this.Col_3.ReadOnly = true;
             this.Col_3.Width = 70;
             // 
             // Form1
@@ -231,7 +229,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_Box_);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Test";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
