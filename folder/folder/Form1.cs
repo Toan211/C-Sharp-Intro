@@ -190,11 +190,37 @@ namespace folder
         private void zip_bt_comp__Click(object sender, EventArgs e)
         {
 
-            string filepath = zip_bt_comp_.Text;
+            string inputFolder = Zip_Box_comp_.Text;
 
-            string zip = zip_bt_comp_.Text + ".zip";
+            string zipPath = Zip_Box_comp_.Text + ".zip";
+
+            if (File.Exists(Zip_Box_comp_.Text + ".zip"))
+            {
+                txt_Box_.Text = " đã tồn tại file zip";
+            }    
+            else
+            {
+                ZipFile.CreateFromDirectory(inputFolder, zipPath);
+
+                txt_Box_.Text = " đã nén thành công";
+            }                
+           
+        }
+
+        private void zip_bt_extr__Click(object sender, EventArgs e)
+        {
+            
+
+            string zipPath = Zip_Box_extr_.Text + ".zip";
+
+            string outFolder = Zip_Box_extr_.Text + "1";
 
             
+            
+                ZipFile.ExtractToDirectory(zipPath, outFolder);
+
+                txt_Box_.Text = " đã giải nén thành công";
+           
         }
     }
 

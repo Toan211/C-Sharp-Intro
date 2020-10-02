@@ -393,6 +393,7 @@
             this.zip_bt_extr_.TabIndex = 6;
             this.zip_bt_extr_.Text = "Giải nén file";
             this.zip_bt_extr_.UseVisualStyleBackColor = true;
+            this.zip_bt_extr_.Click += new System.EventHandler(this.zip_bt_extr__Click);
             // 
             // Zip_Box_extr_
             // 
