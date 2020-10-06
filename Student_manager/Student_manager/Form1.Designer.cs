@@ -32,20 +32,20 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bt_add = new System.Windows.Forms.Button();
+            this.bt_close = new System.Windows.Forms.Button();
+            this.bt_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,13 +89,26 @@
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.bt_add);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(257, 416);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập liệu";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hồ Chí Minh",
+            "Hà Nội",
+            "Hải Phòng",
+            "Cà Mau"});
+            this.comboBox1.Location = new System.Drawing.Point(29, 256);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 13;
             // 
             // label1
             // 
@@ -105,6 +118,28 @@
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã học sinh:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Location = new System.Drawing.Point(29, 200);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(29, 92);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(208, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(29, 32);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(208, 20);
+            this.textBox2.TabIndex = 12;
             // 
             // label2
             // 
@@ -133,29 +168,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Ngày sinh:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Nơi sinh";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(677, 359);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 74);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Thoát";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -178,71 +190,60 @@
             this.radioButton2.Text = "Nữ";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // label5
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Location = new System.Drawing.Point(29, 200);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Nơi sinh";
             // 
-            // textBox1
+            // bt_add
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 20);
-            this.textBox1.TabIndex = 11;
+            this.bt_add.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.bt_add.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_add.BackgroundImage")));
+            this.bt_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bt_add.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_add.Location = new System.Drawing.Point(69, 312);
+            this.bt_add.Name = "bt_add";
+            this.bt_add.Size = new System.Drawing.Size(101, 68);
+            this.bt_add.TabIndex = 5;
+            this.bt_add.Text = "Thêm";
+            this.bt_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_add.UseVisualStyleBackColor = true;
+            this.bt_add.Click += new System.EventHandler(this.button_Add);
             // 
-            // textBox2
+            // bt_close
             // 
-            this.textBox2.Location = new System.Drawing.Point(29, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 12;
+            this.bt_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_close.BackgroundImage = global::Student_manager.Properties.Resources.close;
+            this.bt_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bt_close.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_close.Location = new System.Drawing.Point(677, 359);
+            this.bt_close.Name = "bt_close";
+            this.bt_close.Size = new System.Drawing.Size(111, 74);
+            this.bt_close.TabIndex = 7;
+            this.bt_close.Text = "Thoát";
+            this.bt_close.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_close.UseVisualStyleBackColor = true;
+            this.bt_close.Click += new System.EventHandler(this.button_Close);
             // 
-            // comboBox1
+            // bt_save
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Hồ Chí Minh",
-            "Hà Nội",
-            "Hải Phòng",
-            "Cà Mau"});
-            this.comboBox1.Location = new System.Drawing.Point(29, 256);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(69, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 68);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.AutoSize = true;
-            this.button2.BackgroundImage = global::Student_manager.Properties.Resources.save;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(281, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 74);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Lưu file";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bt_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_save.AutoSize = true;
+            this.bt_save.BackgroundImage = global::Student_manager.Properties.Resources.save;
+            this.bt_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bt_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_save.Location = new System.Drawing.Point(281, 359);
+            this.bt_save.Name = "bt_save";
+            this.bt_save.Size = new System.Drawing.Size(105, 74);
+            this.bt_save.TabIndex = 6;
+            this.bt_save.Text = "Lưu file";
+            this.bt_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_save.UseVisualStyleBackColor = true;
+            this.bt_save.Click += new System.EventHandler(this.button_save);
             // 
             // Form1
             // 
@@ -251,10 +252,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bt_close);
+            this.Controls.Add(this.bt_save);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Student Manager";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -280,9 +281,9 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_add;
+        private System.Windows.Forms.Button bt_save;
+        private System.Windows.Forms.Button bt_close;
     }
 }
 

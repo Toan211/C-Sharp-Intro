@@ -26,45 +26,77 @@ namespace Student_manager
             dt.Columns.Add("Noi sinh", typeof(string));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+     
+
+        private void button_Add(object sender, EventArgs e)
         {
-            try
-            {
+           
                 string Gender;
-               
-                
-                if (radioButton1.Checked)
+
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("dữ liệu MSSV nhập vào có lỗi !!!");
+                return;
+            }
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("dữ liệu tên học sinh nhập vào có lỗi !!!");
+                return;
+            }
+            if (comboBox1.Text == "")
+            {
+                MessageBox.Show("dữ liệu nơi sinh nhập vào có lỗi !!!");
+                return;
+            }
+
+            if (radioButton1.Checked)
                 {
                     Gender = "nam";
                 } 
                 else
                 {
                     Gender = "nu";
-                }    
-                dt.Rows.Add(textBox2.Text, textBox1.Text, Gender  , dateTimePicker1.Text, comboBox1.Text);
-
+                }
+                dt.Rows.Add(textBox2.Text, textBox1.Text, Gender, dateTimePicker1.Text, comboBox1.Text);
                 dataGridView1.DataSource = dt;
-
-            }
-            catch { MessageBox.Show("Dữ liệu nhập vào có lỗi !!!"); };
         }
 
-        private void button2_Click(object sender, EventArgs e)
+     
+
+        private void button_save(object sender, EventArgs e)
         {
-            
-            StreamWriter writer = new StreamWriter(@"C:\\Users\\Admin\\Desktop\\Text.txt");
-            for (int i = 0; i<dataGridView1.Rows.Count-1; i++)
+            using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                for (int j = 0; j<= dataGridView1.Columns.Count;j++)
+                sfd.Filter = "Text Files|*.txt";
+                sfd.Title = "Save Text Document";
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                   writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                    string path = sfd.FileName;
 
+                    using (StreamWriter writer = new StreamWriter(path))
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                        {
+                            // the code will bug if dataGridView1.Columns.Count not -1 (out of range)
+                            for (int j = 0; j <= dataGridView1.Columns.Count - 1; j++)
+                            {
+                                writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+
+                            }
+                            writer.WriteLine("");
+                            writer.WriteLine("--------------------");
+                        }
+                        writer.Close();
+                    }
+                        
                 }
-                writer.WriteLine("");
-                writer.WriteLine("--------------------");
             }
-            writer.Close();
+           
+        }
 
+        private void button_Close(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
