@@ -109,5 +109,7 @@ namespace Calculator
             if (richTextBox1.Text.Length > 0)
                 richTextBox1.Text = (richTextBox1.Text.Substring(0, richTextBox1.Text.Length - 1));
         }
+
+        
     }
 }

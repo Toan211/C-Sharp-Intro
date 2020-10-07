@@ -10,7 +10,7 @@ namespace Calculator
         static public double Calculate(string input)
         {
             try 
-            { 
+            {  //return the number type of the [string]
                 return double.Parse(GetExpression(input)); 
             }
             catch (Exception) 
@@ -23,35 +23,41 @@ namespace Calculator
         {
             string output = string.Empty;
             string fun = string.Empty;
+
+            //create a stack LIFO 
             Stack<char> operStack = new Stack<char>();
             char k = ' '; string p = "";
+            //loop through the input
             for (int i = 0; i < input.Length; i++)
             {
+                //if input is operator or digit (decimal number)
                 if (IsOperator(input[i]) || Char.IsDigit(input[i]))
                 {
-                    if (k == ' ')
+                    if (k == ' ') //if k empty
                         k = input[i];
                     else
-                        if (input[i] == '-' && !Char.IsDigit(k))
-                        p += " 0 ";
+                        if (input[i] == '-' && !Char.IsDigit(k)) //if input is " - " and k is digit number
+                        p += " 0 "; //p = p + " 0 "
                     k = input[i];
                 }
-                p += input[i];
+                p += input[i]; //p = p + input
             }
-            input = p;
+            input = p;  // done the for loop, give p back to string input
+            //now input still like before
             for (int i = 0; i < input.Length; i++)
             {
                 if (IsDelimeter(input[i]))
                     continue;
                 if (Char.IsDigit(input[i]))
                 {
+                    //loop the i right here if input is digit
                     while (!IsDelimeter(input[i]) && !IsOperator(input[i]))
-                    {
-                        output += input[i];
-                        i++;
+                    {  
+                        output += input[i]; //give output = digit number
+                        i++; //find if this is a 1 or 10 or 100
                         if (i == input.Length) break;
-                    }
-                    output += " ";
+                    } 
+                    output += " "; //output = output + " "
                     i--;
                 }
                 else
