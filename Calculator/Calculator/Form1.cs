@@ -94,47 +94,20 @@ namespace Calculator
 
         private void button17_Click(object sender, EventArgs e)
         {
+            try { richTextBox2.Text = RPN.Calculate(richTextBox1.Text).ToString(); }
+            catch (MyException ex) { richTextBox2.Text = ex.type; }
+        }
 
-            int t = 0;
-            if (richTextBox1.Text.Contains("+"))
-            {
-                t = richTextBox1.Text.IndexOf("+");
-            }
-            else if (richTextBox1.Text.Contains("-"))
-            {
-                t = richTextBox1.Text.IndexOf("-");
-            }
-            else if(richTextBox1.Text.Contains("*"))
-            {
-                t = richTextBox1.Text.IndexOf("*");
-            }
-            else if(richTextBox1.Text.Contains("/"))
-            {
-                t = richTextBox1.Text.IndexOf("/");
-            }
-            string x = richTextBox1.Text.Substring(t, 1);
-            double x1 = Convert.ToDouble(richTextBox1.Text.Substring(0, t));
-            double x2 = Convert.ToDouble(richTextBox1.Text.Substring(t+1, richTextBox1.Text.Length-t-1));
+        public static string ans = String.Empty;
+        private void Del__Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = ans = String.Empty;
+        }
 
-            if (x =="+")
-            {
-                richTextBox2.Text = (richTextBox1.Text + "=" + (x1 + x2));
-            }
-            else if (x == "-")
-            {
-                richTextBox2.Text = (richTextBox1.Text + "=" + (x1 - x2));
-            }
-            else if(x == "*")
-            {
-                richTextBox2.Text = (richTextBox1.Text + "=" + (x1 * x2));
-            }
-            else if(x == "/")
-            {
-                richTextBox2.Text = (richTextBox1.Text + "=" + (x1 / x2));
-            }
-            
-
-
+        private void ADel__Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text.Length > 0)
+                richTextBox1.Text = (richTextBox1.Text.Substring(0, richTextBox1.Text.Length - 1));
         }
     }
 }

@@ -166,30 +166,36 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 49);
             this.button12.TabIndex = 10;
-            this.button12.Text = "x";
+            this.button12.Text = "*";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // ADel_
             // 
+            this.ADel_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ADel_.Location = new System.Drawing.Point(197, 159);
             this.ADel_.Name = "ADel_";
             this.ADel_.Size = new System.Drawing.Size(173, 63);
             this.ADel_.TabIndex = 17;
             this.ADel_.Text = "<=";
             this.ADel_.UseVisualStyleBackColor = true;
+            this.ADel_.Click += new System.EventHandler(this.ADel__Click);
             // 
             // Del_
             // 
-            this.Del_.Location = new System.Drawing.Point(11, 159);
+            this.Del_.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Del_.Location = new System.Drawing.Point(12, 159);
             this.Del_.Name = "Del_";
             this.Del_.Size = new System.Drawing.Size(165, 63);
             this.Del_.TabIndex = 16;
             this.Del_.Text = "Del";
             this.Del_.UseVisualStyleBackColor = true;
+            this.Del_.Click += new System.EventHandler(this.Del__Click);
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(11, 12);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(261, 141);
@@ -198,6 +204,7 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox2.Location = new System.Drawing.Point(278, 12);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(100, 141);
@@ -270,7 +277,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.ResumeLayout(false);
 
         }
