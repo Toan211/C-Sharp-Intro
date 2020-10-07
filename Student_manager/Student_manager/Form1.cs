@@ -72,7 +72,6 @@ namespace Student_manager
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     string path = sfd.FileName;
-
                     using (StreamWriter writer = new StreamWriter(path))
                     {
                         for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -81,17 +80,14 @@ namespace Student_manager
                             for (int j = 0; j <= dataGridView1.Columns.Count - 1; j++)
                             {
                                 writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
-
                             }
                             writer.WriteLine("");
                             writer.WriteLine("--------------------");
                         }
                         writer.Close();
-                    }
-                        
+                    }                        
                 }
-            }
-           
+            }              
         }
 
         private void button_Close(object sender, EventArgs e)
