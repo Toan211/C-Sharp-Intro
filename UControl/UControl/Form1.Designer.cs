@@ -28,31 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.infoCbBox1 = new UControl.InfoCbBox();
             this.SuspendLayout();
-            // 
-            // infoCbBox1
-            // 
-            this.infoCbBox1.Location = new System.Drawing.Point(144, 71);
-            this.infoCbBox1.Name = "infoCbBox1";
-            this.infoCbBox1.Size = new System.Drawing.Size(290, 181);
-            this.infoCbBox1.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.infoCbBox1);
+            this.ClientSize = new System.Drawing.Size(428, 343);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
-        #endregion
 
-        private InfoCbBox infoCbBox1;
+
+        #endregion
     }
 }
 

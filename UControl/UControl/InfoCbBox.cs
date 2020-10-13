@@ -18,11 +18,11 @@ namespace UControl
             InitializeComponent();
             
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             Form addForm = new Add();
-            addForm.ShowDialog();
+            addForm.Show();
 
         }
     }

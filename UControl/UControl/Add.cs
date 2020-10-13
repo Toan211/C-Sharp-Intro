@@ -12,7 +12,7 @@ namespace UControl
 {
     public partial class Add : Form
     {
-        public string a;
+        public static string txt_;
         public Add()
         {   
             
@@ -22,8 +22,8 @@ namespace UControl
 
         protected void bt_Add__Click(object sender, EventArgs e)
         {
-            
-           
+
+            txt_ = txt_Add_.Text;
             
             
         }
