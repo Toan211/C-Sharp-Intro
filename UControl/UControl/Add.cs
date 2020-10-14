@@ -24,6 +24,12 @@ namespace UControl
         {
 
             txt_ = txt_Add_.Text;
+            InfoCbBox user = new InfoCbBox();
+
+            InfoCbBox.txt_cb_ = txt_Add_.Text;
+
+            user.AddItem("what");
+            user.comboBox2.Items.Add("what");
             
             
         }

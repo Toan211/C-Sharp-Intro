@@ -28,11 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.infoCbBox1 = new UControl.InfoCbBox();
             this.SuspendLayout();
+            // 
+            // infoCbBox1
+            // 
+            this.infoCbBox1.Location = new System.Drawing.Point(0, 0);
+            this.infoCbBox1.Name = "infoCbBox1";
+            this.infoCbBox1.Size = new System.Drawing.Size(290, 181);
+            this.infoCbBox1.TabIndex = 0;
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(428, 343);
+            this.Controls.Add(this.infoCbBox1);
             this.Name = "Form1";
             this.ResumeLayout(false);
 
@@ -41,6 +50,8 @@
 
 
         #endregion
+
+        private InfoCbBox infoCbBox1;
     }
 }
 

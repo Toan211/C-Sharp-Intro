@@ -1,4 +1,6 @@
-﻿namespace UControl
+﻿using System.Security.AccessControl;
+
+namespace UControl
 {
     partial class InfoCbBox
     {
@@ -26,7 +28,7 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -53,6 +55,7 @@
             "Tp Ho Chi Minh",
             "Ha Noi",
             "Vung Tau"});
+            
             this.comboBox2.Location = new System.Drawing.Point(42, 55);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -132,12 +135,12 @@
 
         #endregion
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.ComboBox comboBox2;
     }
 }
