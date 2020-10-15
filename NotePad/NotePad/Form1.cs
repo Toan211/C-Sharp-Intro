@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using NotePad;
 
 namespace Bruh
 {
@@ -132,6 +133,65 @@ namespace Bruh
                      
                 }
             }
+        }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FindForm f1 = new FindForm();
+            f1.ShowDialog();
+        }
+
+        private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReplaceForm f2 = new ReplaceForm();
+            f2.ShowDialog();
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Undo();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Paste();
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectedText = String.Empty;
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectAll();
+        }
+
+        private void timeDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text += "\t" + System.DateTime.Now;
+        }
+
+        private void wordwarpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AboutForm f1 = new AboutForm();
+            f1.ShowDialog();
         }
     }
 }
