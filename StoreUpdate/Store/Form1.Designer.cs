@@ -40,8 +40,6 @@
             this.dt_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dt_Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dt_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_Top = new System.Windows.Forms.Button();
-            this.bt_Yao = new System.Windows.Forms.Button();
             this.bt_Soda = new System.Windows.Forms.Button();
             this.bt_TraSua = new System.Windows.Forms.Button();
             this.bt_Tra = new System.Windows.Forms.Button();
@@ -71,11 +69,25 @@
             this.bt8 = new System.Windows.Forms.Button();
             this.bt10 = new System.Windows.Forms.Button();
             this.panel_tra = new System.Windows.Forms.Panel();
+            this.panel_Soda = new System.Windows.Forms.Panel();
+            this.bt3_10 = new System.Windows.Forms.Button();
+            this.bt3_8 = new System.Windows.Forms.Button();
+            this.bt3_6 = new System.Windows.Forms.Button();
+            this.bt3_4 = new System.Windows.Forms.Button();
+            this.bt3_2 = new System.Windows.Forms.Button();
+            this.bt3_9 = new System.Windows.Forms.Button();
+            this.bt3_7 = new System.Windows.Forms.Button();
+            this.bt3_5 = new System.Windows.Forms.Button();
+            this.bt3_3 = new System.Windows.Forms.Button();
+            this.bt3_1 = new System.Windows.Forms.Button();
+            this.bt_del_ = new System.Windows.Forms.Button();
+            this.bt_del_all = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_tra_sua.SuspendLayout();
             this.panel_tra.SuspendLayout();
+            this.panel_Soda.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox2
@@ -150,50 +162,29 @@
             // 
             this.dt_name.HeaderText = "Tên Món Nước";
             this.dt_name.Name = "dt_name";
+            this.dt_name.Width = 88;
             // 
             // dt_count
             // 
             this.dt_count.HeaderText = "Số lượng";
             this.dt_count.Name = "dt_count";
+            this.dt_count.Width = 87;
             // 
             // dt_Money
             // 
             this.dt_Money.HeaderText = "Đơn Giá";
             this.dt_Money.Name = "dt_Money";
+            this.dt_Money.Width = 88;
             // 
             // dt_Total
             // 
             this.dt_Total.HeaderText = "Thành tiền";
             this.dt_Total.Name = "dt_Total";
-            // 
-            // bt_Top
-            // 
-            this.bt_Top.BackColor = System.Drawing.Color.LightGreen;
-            this.bt_Top.Enabled = false;
-            this.bt_Top.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Top.Location = new System.Drawing.Point(3, 386);
-            this.bt_Top.Name = "bt_Top";
-            this.bt_Top.Size = new System.Drawing.Size(166, 68);
-            this.bt_Top.TabIndex = 4;
-            this.bt_Top.Text = "Topping";
-            this.bt_Top.UseVisualStyleBackColor = false;
-            // 
-            // bt_Yao
-            // 
-            this.bt_Yao.BackColor = System.Drawing.Color.LightGreen;
-            this.bt_Yao.Enabled = false;
-            this.bt_Yao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Yao.Location = new System.Drawing.Point(3, 237);
-            this.bt_Yao.Name = "bt_Yao";
-            this.bt_Yao.Size = new System.Drawing.Size(166, 68);
-            this.bt_Yao.TabIndex = 3;
-            this.bt_Yao.Text = "Yaourt";
-            this.bt_Yao.UseVisualStyleBackColor = false;
+            this.dt_Total.Width = 87;
             // 
             // bt_Soda
             // 
             this.bt_Soda.BackColor = System.Drawing.Color.LightGreen;
-            this.bt_Soda.Enabled = false;
             this.bt_Soda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Soda.Location = new System.Drawing.Point(3, 163);
             this.bt_Soda.Name = "bt_Soda";
@@ -201,6 +192,7 @@
             this.bt_Soda.TabIndex = 2;
             this.bt_Soda.Text = "Soda";
             this.bt_Soda.UseVisualStyleBackColor = false;
+            this.bt_Soda.Click += new System.EventHandler(this.bt_Soda_Click);
             // 
             // bt_TraSua
             // 
@@ -233,10 +225,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.bt_Top);
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel2.Controls.Add(this.bt_del_all);
             this.panel2.Controls.Add(this.bt_Tra);
             this.panel2.Controls.Add(this.bt_TraSua);
-            this.panel2.Controls.Add(this.bt_Yao);
+            this.panel2.Controls.Add(this.bt_del_);
             this.panel2.Controls.Add(this.bt_Soda);
             this.panel2.Location = new System.Drawing.Point(417, 12);
             this.panel2.Name = "panel2";
@@ -245,6 +238,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.Controls.Add(this.richTextBox2);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.label3);
@@ -259,6 +253,7 @@
             // 
             // panel_tra_sua
             // 
+            this.panel_tra_sua.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel_tra_sua.Controls.Add(this.bt2_10);
             this.panel_tra_sua.Controls.Add(this.bt2_8);
             this.panel_tra_sua.Controls.Add(this.bt2_6);
@@ -271,7 +266,7 @@
             this.panel_tra_sua.Controls.Add(this.bt2_1);
             this.panel_tra_sua.Location = new System.Drawing.Point(595, 13);
             this.panel_tra_sua.Name = "panel_tra_sua";
-            this.panel_tra_sua.Size = new System.Drawing.Size(382, 459);
+            this.panel_tra_sua.Size = new System.Drawing.Size(382, 393);
             this.panel_tra_sua.TabIndex = 19;
             this.panel_tra_sua.Visible = false;
             // 
@@ -517,6 +512,7 @@
             // 
             // panel_tra
             // 
+            this.panel_tra.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel_tra.Controls.Add(this.bt10);
             this.panel_tra.Controls.Add(this.bt8);
             this.panel_tra.Controls.Add(this.bt6);
@@ -529,9 +525,174 @@
             this.panel_tra.Controls.Add(this.bt1);
             this.panel_tra.Location = new System.Drawing.Point(595, 13);
             this.panel_tra.Name = "panel_tra";
-            this.panel_tra.Size = new System.Drawing.Size(382, 459);
+            this.panel_tra.Size = new System.Drawing.Size(382, 393);
             this.panel_tra.TabIndex = 17;
             this.panel_tra.Visible = false;
+            // 
+            // panel_Soda
+            // 
+            this.panel_Soda.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel_Soda.Controls.Add(this.bt3_10);
+            this.panel_Soda.Controls.Add(this.bt3_8);
+            this.panel_Soda.Controls.Add(this.bt3_6);
+            this.panel_Soda.Controls.Add(this.bt3_4);
+            this.panel_Soda.Controls.Add(this.bt3_2);
+            this.panel_Soda.Controls.Add(this.bt3_9);
+            this.panel_Soda.Controls.Add(this.bt3_7);
+            this.panel_Soda.Controls.Add(this.bt3_5);
+            this.panel_Soda.Controls.Add(this.bt3_3);
+            this.panel_Soda.Controls.Add(this.bt3_1);
+            this.panel_Soda.Location = new System.Drawing.Point(595, 13);
+            this.panel_Soda.Name = "panel_Soda";
+            this.panel_Soda.Size = new System.Drawing.Size(382, 393);
+            this.panel_Soda.TabIndex = 20;
+            this.panel_Soda.Visible = false;
+            // 
+            // bt3_10
+            // 
+            this.bt3_10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_10.Location = new System.Drawing.Point(193, 310);
+            this.bt3_10.Name = "bt3_10";
+            this.bt3_10.Size = new System.Drawing.Size(184, 68);
+            this.bt3_10.TabIndex = 16;
+            this.bt3_10.Text = "soda cam";
+            this.bt3_10.UseVisualStyleBackColor = false;
+            this.bt3_10.Click += new System.EventHandler(this.bt3_10_Click);
+            // 
+            // bt3_8
+            // 
+            this.bt3_8.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_8.Location = new System.Drawing.Point(193, 236);
+            this.bt3_8.Name = "bt3_8";
+            this.bt3_8.Size = new System.Drawing.Size(184, 68);
+            this.bt3_8.TabIndex = 14;
+            this.bt3_8.Text = "soda kem cherry";
+            this.bt3_8.UseVisualStyleBackColor = false;
+            this.bt3_8.Click += new System.EventHandler(this.bt3_8_Click);
+            // 
+            // bt3_6
+            // 
+            this.bt3_6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_6.Location = new System.Drawing.Point(193, 162);
+            this.bt3_6.Name = "bt3_6";
+            this.bt3_6.Size = new System.Drawing.Size(184, 68);
+            this.bt3_6.TabIndex = 13;
+            this.bt3_6.Text = "soda sữa đào";
+            this.bt3_6.UseVisualStyleBackColor = false;
+            this.bt3_6.Click += new System.EventHandler(this.bt3_6_Click);
+            // 
+            // bt3_4
+            // 
+            this.bt3_4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_4.Location = new System.Drawing.Point(193, 88);
+            this.bt3_4.Name = "bt3_4";
+            this.bt3_4.Size = new System.Drawing.Size(184, 68);
+            this.bt3_4.TabIndex = 12;
+            this.bt3_4.Text = "Soda bạc hà";
+            this.bt3_4.UseVisualStyleBackColor = false;
+            this.bt3_4.Click += new System.EventHandler(this.bt3_4_Click);
+            // 
+            // bt3_2
+            // 
+            this.bt3_2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_2.Location = new System.Drawing.Point(193, 14);
+            this.bt3_2.Name = "bt3_2";
+            this.bt3_2.Size = new System.Drawing.Size(184, 68);
+            this.bt3_2.TabIndex = 11;
+            this.bt3_2.Text = "Soda Dưa";
+            this.bt3_2.UseVisualStyleBackColor = false;
+            this.bt3_2.Click += new System.EventHandler(this.bt3_2_Click);
+            // 
+            // bt3_9
+            // 
+            this.bt3_9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_9.Location = new System.Drawing.Point(3, 310);
+            this.bt3_9.Name = "bt3_9";
+            this.bt3_9.Size = new System.Drawing.Size(184, 68);
+            this.bt3_9.TabIndex = 10;
+            this.bt3_9.Text = "soda xoài";
+            this.bt3_9.UseVisualStyleBackColor = false;
+            this.bt3_9.Click += new System.EventHandler(this.bt3_9_Click);
+            // 
+            // bt3_7
+            // 
+            this.bt3_7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_7.Location = new System.Drawing.Point(3, 236);
+            this.bt3_7.Name = "bt3_7";
+            this.bt3_7.Size = new System.Drawing.Size(184, 68);
+            this.bt3_7.TabIndex = 8;
+            this.bt3_7.Text = "Soda việt quất";
+            this.bt3_7.UseVisualStyleBackColor = false;
+            this.bt3_7.Click += new System.EventHandler(this.bt3_7_Click);
+            // 
+            // bt3_5
+            // 
+            this.bt3_5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_5.Location = new System.Drawing.Point(3, 162);
+            this.bt3_5.Name = "bt3_5";
+            this.bt3_5.Size = new System.Drawing.Size(184, 68);
+            this.bt3_5.TabIndex = 7;
+            this.bt3_5.Text = "Soda Blue Ocean";
+            this.bt3_5.UseVisualStyleBackColor = false;
+            this.bt3_5.Click += new System.EventHandler(this.bt3_5_Click);
+            // 
+            // bt3_3
+            // 
+            this.bt3_3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_3.Location = new System.Drawing.Point(3, 88);
+            this.bt3_3.Name = "bt3_3";
+            this.bt3_3.Size = new System.Drawing.Size(184, 68);
+            this.bt3_3.TabIndex = 6;
+            this.bt3_3.Text = "Italian Soda";
+            this.bt3_3.UseVisualStyleBackColor = false;
+            this.bt3_3.Click += new System.EventHandler(this.bt3_3_Click);
+            // 
+            // bt3_1
+            // 
+            this.bt3_1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt3_1.Location = new System.Drawing.Point(3, 14);
+            this.bt3_1.Name = "bt3_1";
+            this.bt3_1.Size = new System.Drawing.Size(184, 68);
+            this.bt3_1.TabIndex = 5;
+            this.bt3_1.Text = "Soda Mix";
+            this.bt3_1.UseVisualStyleBackColor = false;
+            this.bt3_1.Click += new System.EventHandler(this.bt3_1_Click);
+            // 
+            // bt_del_
+            // 
+            this.bt_del_.BackColor = System.Drawing.Color.Red;
+            this.bt_del_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_del_.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bt_del_.Location = new System.Drawing.Point(8, 359);
+            this.bt_del_.Name = "bt_del_";
+            this.bt_del_.Size = new System.Drawing.Size(157, 36);
+            this.bt_del_.TabIndex = 21;
+            this.bt_del_.Text = "Xóa hàng";
+            this.bt_del_.UseVisualStyleBackColor = false;
+            this.bt_del_.Click += new System.EventHandler(this.bt_del__Click);
+            // 
+            // bt_del_all
+            // 
+            this.bt_del_all.BackColor = System.Drawing.Color.Red;
+            this.bt_del_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_del_all.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bt_del_all.Location = new System.Drawing.Point(8, 410);
+            this.bt_del_all.Name = "bt_del_all";
+            this.bt_del_all.Size = new System.Drawing.Size(152, 36);
+            this.bt_del_all.TabIndex = 6;
+            this.bt_del_all.Text = "Xóa hết";
+            this.bt_del_all.UseVisualStyleBackColor = false;
+            this.bt_del_all.Click += new System.EventHandler(this.bt_del_all_Click);
             // 
             // Form1
             // 
@@ -539,6 +700,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 494);
             this.Controls.Add(this.panel_tra_sua);
+            this.Controls.Add(this.panel_Soda);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_tra);
@@ -550,6 +712,7 @@
             this.panel3.PerformLayout();
             this.panel_tra_sua.ResumeLayout(false);
             this.panel_tra.ResumeLayout(false);
+            this.panel_Soda.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,8 +725,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_Top;
-        private System.Windows.Forms.Button bt_Yao;
         private System.Windows.Forms.Button bt_Soda;
         private System.Windows.Forms.Button bt_TraSua;
         private System.Windows.Forms.Button bt_Tra;
@@ -597,6 +758,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dt_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn dt_Money;
         private System.Windows.Forms.DataGridViewTextBoxColumn dt_Total;
+        private System.Windows.Forms.Panel panel_Soda;
+        private System.Windows.Forms.Button bt3_10;
+        private System.Windows.Forms.Button bt3_8;
+        private System.Windows.Forms.Button bt3_6;
+        private System.Windows.Forms.Button bt3_4;
+        private System.Windows.Forms.Button bt3_2;
+        private System.Windows.Forms.Button bt3_9;
+        private System.Windows.Forms.Button bt3_7;
+        private System.Windows.Forms.Button bt3_5;
+        private System.Windows.Forms.Button bt3_3;
+        private System.Windows.Forms.Button bt3_1;
+        private System.Windows.Forms.Button bt_del_;
+        private System.Windows.Forms.Button bt_del_all;
     }
 }
 
