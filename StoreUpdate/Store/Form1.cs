@@ -443,17 +443,22 @@ namespace Store
 #endregion
         private void bt_del__Click(object sender, EventArgs e)
         {
-            s--;
-            double TienHang2 = 0;
-            foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            if (dataGridView1.CurrentCell.Selected == true) //nếu có thg cell dc chọn
             {
-                TienHang2 += Convert.ToInt32(dataGridView1.Rows[cell.RowIndex].Cells[3].Value);
-                TongTien -= TienHang2 - TienHang2 * (Convert.ToDouble(richTextBox2.Text) / 100) ;
-                richTextBox3.Text = TongTien.ToString();
-                TienHang -= Convert.ToDouble(dataGridView1.Rows[cell.RowIndex].Cells[3].Value);
-                richTextBox1.Text = TienHang.ToString();
-                
-                dataGridView1.Rows.RemoveAt(cell.RowIndex);
+                s--;
+                double TienHang2 = 0;
+                foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+                {
+                    TienHang2 += Convert.ToInt32(dataGridView1.Rows[cell.RowIndex].Cells[3].Value);
+                    TongTien -= TienHang2 - TienHang2 * (Convert.ToDouble(richTextBox2.Text) / 100);
+                    richTextBox3.Text = TongTien.ToString();
+                    TienHang -= Convert.ToDouble(dataGridView1.Rows[cell.RowIndex].Cells[3].Value);
+                    richTextBox1.Text = TienHang.ToString();
+
+                    dataGridView1.Rows.RemoveAt(cell.RowIndex);
+
+                }
+                dataGridView1.CurrentRow.Selected = false; //cho thằng chọn đấy thành ko chọn
             }
 
         }
