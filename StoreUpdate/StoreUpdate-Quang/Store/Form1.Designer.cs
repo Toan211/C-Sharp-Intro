@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -45,7 +46,6 @@
             this.bt_Tra = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.bt_del_all = new System.Windows.Forms.Button();
             this.bt_del_ = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -83,7 +83,6 @@
             this.bt3_3 = new System.Windows.Forms.Button();
             this.bt3_1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_tra_sua.SuspendLayout();
             this.panel_tra.SuspendLayout();
@@ -146,6 +145,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dt_name,
@@ -154,67 +154,63 @@
             this.dt_Total});
             this.dataGridView1.Location = new System.Drawing.Point(6, 1);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(393, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(566, 308);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // dt_name
             // 
-            this.dt_name.HeaderText = "Tên Món Nước";
+            this.dt_name.HeaderText = "Tên Sách";
             this.dt_name.Name = "dt_name";
-            this.dt_name.Width = 88;
             // 
             // dt_count
             // 
             this.dt_count.HeaderText = "Số lượng";
             this.dt_count.Name = "dt_count";
-            this.dt_count.Width = 87;
             // 
             // dt_Money
             // 
             this.dt_Money.HeaderText = "Đơn Giá";
             this.dt_Money.Name = "dt_Money";
-            this.dt_Money.Width = 88;
             // 
             // dt_Total
             // 
             this.dt_Total.HeaderText = "Thành tiền";
             this.dt_Total.Name = "dt_Total";
-            this.dt_Total.Width = 87;
             // 
             // bt_Soda
             // 
-            this.bt_Soda.BackColor = System.Drawing.Color.LightGreen;
+            this.bt_Soda.BackColor = System.Drawing.Color.Aqua;
             this.bt_Soda.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Soda.Location = new System.Drawing.Point(3, 163);
+            this.bt_Soda.Location = new System.Drawing.Point(273, 12);
             this.bt_Soda.Name = "bt_Soda";
-            this.bt_Soda.Size = new System.Drawing.Size(166, 68);
+            this.bt_Soda.Size = new System.Drawing.Size(123, 68);
             this.bt_Soda.TabIndex = 2;
-            this.bt_Soda.Text = "Soda";
+            this.bt_Soda.Text = "Tiểu thuyết";
             this.bt_Soda.UseVisualStyleBackColor = false;
             this.bt_Soda.Click += new System.EventHandler(this.bt_Soda_Click);
             // 
             // bt_TraSua
             // 
-            this.bt_TraSua.BackColor = System.Drawing.Color.LightGreen;
+            this.bt_TraSua.BackColor = System.Drawing.Color.Aqua;
             this.bt_TraSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_TraSua.Location = new System.Drawing.Point(3, 89);
+            this.bt_TraSua.Location = new System.Drawing.Point(144, 12);
             this.bt_TraSua.Name = "bt_TraSua";
-            this.bt_TraSua.Size = new System.Drawing.Size(166, 68);
+            this.bt_TraSua.Size = new System.Drawing.Size(123, 68);
             this.bt_TraSua.TabIndex = 1;
-            this.bt_TraSua.Text = "Trà sữa";
+            this.bt_TraSua.Text = "Sách giáo khoa";
             this.bt_TraSua.UseVisualStyleBackColor = false;
             this.bt_TraSua.Click += new System.EventHandler(this.button_TraSua);
             // 
             // bt_Tra
             // 
-            this.bt_Tra.BackColor = System.Drawing.Color.LightGreen;
+            this.bt_Tra.BackColor = System.Drawing.Color.Aqua;
             this.bt_Tra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_Tra.Location = new System.Drawing.Point(3, 15);
+            this.bt_Tra.Location = new System.Drawing.Point(15, 12);
             this.bt_Tra.Name = "bt_Tra";
-            this.bt_Tra.Size = new System.Drawing.Size(166, 68);
+            this.bt_Tra.Size = new System.Drawing.Size(123, 68);
             this.bt_Tra.TabIndex = 0;
-            this.bt_Tra.Text = "Trà / Hồng trà";
+            this.bt_Tra.Text = "Truyện tranh";
             this.bt_Tra.UseVisualStyleBackColor = false;
             this.bt_Tra.Click += new System.EventHandler(this.button_Tra);
             // 
@@ -223,27 +219,14 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel2.Controls.Add(this.bt_del_all);
-            this.panel2.Controls.Add(this.bt_Tra);
-            this.panel2.Controls.Add(this.bt_TraSua);
-            this.panel2.Controls.Add(this.bt_del_);
-            this.panel2.Controls.Add(this.bt_Soda);
-            this.panel2.Location = new System.Drawing.Point(417, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(172, 459);
-            this.panel2.TabIndex = 18;
-            // 
             // bt_del_all
             // 
-            this.bt_del_all.BackColor = System.Drawing.Color.Red;
+            this.bt_del_all.BackColor = System.Drawing.Color.Navy;
             this.bt_del_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_del_all.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bt_del_all.Location = new System.Drawing.Point(8, 410);
+            this.bt_del_all.Location = new System.Drawing.Point(435, 380);
             this.bt_del_all.Name = "bt_del_all";
-            this.bt_del_all.Size = new System.Drawing.Size(152, 36);
+            this.bt_del_all.Size = new System.Drawing.Size(115, 36);
             this.bt_del_all.TabIndex = 6;
             this.bt_del_all.Text = "Xóa hết";
             this.bt_del_all.UseVisualStyleBackColor = false;
@@ -251,12 +234,12 @@
             // 
             // bt_del_
             // 
-            this.bt_del_.BackColor = System.Drawing.Color.Red;
+            this.bt_del_.BackColor = System.Drawing.Color.Navy;
             this.bt_del_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_del_.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bt_del_.Location = new System.Drawing.Point(8, 359);
+            this.bt_del_.Location = new System.Drawing.Point(435, 338);
             this.bt_del_.Name = "bt_del_";
-            this.bt_del_.Size = new System.Drawing.Size(157, 36);
+            this.bt_del_.Size = new System.Drawing.Size(115, 36);
             this.bt_del_.TabIndex = 21;
             this.bt_del_.Text = "Xóa hàng";
             this.bt_del_.UseVisualStyleBackColor = false;
@@ -265,6 +248,8 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel3.Controls.Add(this.bt_del_all);
+            this.panel3.Controls.Add(this.bt_del_);
             this.panel3.Controls.Add(this.richTextBox2);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.label3);
@@ -272,14 +257,15 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.richTextBox3);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Location = new System.Drawing.Point(402, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(399, 459);
+            this.panel3.Size = new System.Drawing.Size(575, 459);
             this.panel3.TabIndex = 9;
             // 
             // panel_tra_sua
             // 
             this.panel_tra_sua.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel_tra_sua.AutoSize = true;
             this.panel_tra_sua.Controls.Add(this.bt2_10);
             this.panel_tra_sua.Controls.Add(this.bt2_8);
             this.panel_tra_sua.Controls.Add(this.bt2_6);
@@ -290,7 +276,7 @@
             this.panel_tra_sua.Controls.Add(this.bt2_5);
             this.panel_tra_sua.Controls.Add(this.bt2_3);
             this.panel_tra_sua.Controls.Add(this.bt2_1);
-            this.panel_tra_sua.Location = new System.Drawing.Point(595, 13);
+            this.panel_tra_sua.Location = new System.Drawing.Point(14, 89);
             this.panel_tra_sua.Name = "panel_tra_sua";
             this.panel_tra_sua.Size = new System.Drawing.Size(382, 393);
             this.panel_tra_sua.TabIndex = 19;
@@ -298,241 +284,241 @@
             // 
             // bt2_10
             // 
-            this.bt2_10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_10.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_10.Location = new System.Drawing.Point(193, 310);
             this.bt2_10.Name = "bt2_10";
             this.bt2_10.Size = new System.Drawing.Size(184, 68);
             this.bt2_10.TabIndex = 16;
-            this.bt2_10.Text = "Trà sữa cherry";
+            this.bt2_10.Text = "Sách Mỹ thuật";
             this.bt2_10.UseVisualStyleBackColor = false;
             this.bt2_10.Click += new System.EventHandler(this.bt2_10_Click);
             // 
             // bt2_8
             // 
-            this.bt2_8.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_8.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_8.Location = new System.Drawing.Point(193, 236);
             this.bt2_8.Name = "bt2_8";
             this.bt2_8.Size = new System.Drawing.Size(184, 68);
             this.bt2_8.TabIndex = 14;
-            this.bt2_8.Text = "Trà sữa kiwi";
+            this.bt2_8.Text = "Sách Tin học";
             this.bt2_8.UseVisualStyleBackColor = false;
             this.bt2_8.Click += new System.EventHandler(this.bt2_8_Click);
             // 
             // bt2_6
             // 
-            this.bt2_6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_6.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_6.Location = new System.Drawing.Point(193, 162);
             this.bt2_6.Name = "bt2_6";
             this.bt2_6.Size = new System.Drawing.Size(184, 68);
             this.bt2_6.TabIndex = 13;
-            this.bt2_6.Text = "Trà sữa đào";
+            this.bt2_6.Text = "Sách Lịch sử";
             this.bt2_6.UseVisualStyleBackColor = false;
             this.bt2_6.Click += new System.EventHandler(this.bt2_6_Click);
             // 
             // bt2_4
             // 
-            this.bt2_4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_4.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_4.Location = new System.Drawing.Point(193, 88);
             this.bt2_4.Name = "bt2_4";
             this.bt2_4.Size = new System.Drawing.Size(184, 68);
             this.bt2_4.TabIndex = 12;
-            this.bt2_4.Text = "trà sữa dâu";
+            this.bt2_4.Text = "Sách Hóa học";
             this.bt2_4.UseVisualStyleBackColor = false;
             this.bt2_4.Click += new System.EventHandler(this.bt2_4_Click);
             // 
             // bt2_2
             // 
-            this.bt2_2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_2.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_2.Location = new System.Drawing.Point(193, 14);
             this.bt2_2.Name = "bt2_2";
             this.bt2_2.Size = new System.Drawing.Size(184, 68);
             this.bt2_2.TabIndex = 11;
-            this.bt2_2.Text = "Trà sưa Socola";
+            this.bt2_2.Text = "Sách Văn";
             this.bt2_2.UseVisualStyleBackColor = false;
             this.bt2_2.Click += new System.EventHandler(this.bt2_2_Click);
             // 
             // bt2_9
             // 
-            this.bt2_9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_9.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_9.Location = new System.Drawing.Point(3, 310);
             this.bt2_9.Name = "bt2_9";
             this.bt2_9.Size = new System.Drawing.Size(184, 68);
             this.bt2_9.TabIndex = 10;
-            this.bt2_9.Text = "Trà sữa thái đỏ";
+            this.bt2_9.Text = "Sách Sinh học";
             this.bt2_9.UseVisualStyleBackColor = false;
             this.bt2_9.Click += new System.EventHandler(this.bt2_9_Click);
             // 
             // bt2_7
             // 
-            this.bt2_7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_7.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_7.Location = new System.Drawing.Point(3, 236);
             this.bt2_7.Name = "bt2_7";
             this.bt2_7.Size = new System.Drawing.Size(184, 68);
             this.bt2_7.TabIndex = 8;
-            this.bt2_7.Text = "Trà sữa thái xanh";
+            this.bt2_7.Text = "Sách Địa lý";
             this.bt2_7.UseVisualStyleBackColor = false;
             this.bt2_7.Click += new System.EventHandler(this.bt2_7_Click);
             // 
             // bt2_5
             // 
-            this.bt2_5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_5.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_5.Location = new System.Drawing.Point(3, 162);
             this.bt2_5.Name = "bt2_5";
             this.bt2_5.Size = new System.Drawing.Size(184, 68);
             this.bt2_5.TabIndex = 7;
-            this.bt2_5.Text = "Trà sữa bạc hà";
+            this.bt2_5.Text = "Sách Anh văn";
             this.bt2_5.UseVisualStyleBackColor = false;
             this.bt2_5.Click += new System.EventHandler(this.bt2_5_Click);
             // 
             // bt2_3
             // 
-            this.bt2_3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_3.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_3.Location = new System.Drawing.Point(3, 88);
             this.bt2_3.Name = "bt2_3";
             this.bt2_3.Size = new System.Drawing.Size(184, 68);
             this.bt2_3.TabIndex = 6;
-            this.bt2_3.Text = "Trà sữa";
+            this.bt2_3.Text = "Sách Lý";
             this.bt2_3.UseVisualStyleBackColor = false;
             this.bt2_3.Click += new System.EventHandler(this.bt2_3_Click);
             // 
             // bt2_1
             // 
-            this.bt2_1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2_1.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2_1.Location = new System.Drawing.Point(3, 14);
             this.bt2_1.Name = "bt2_1";
             this.bt2_1.Size = new System.Drawing.Size(184, 68);
             this.bt2_1.TabIndex = 5;
-            this.bt2_1.Text = "Trà sữa việt quất";
+            this.bt2_1.Text = "Sách Toán";
             this.bt2_1.UseVisualStyleBackColor = false;
             this.bt2_1.Click += new System.EventHandler(this.bt2_1_Click);
             // 
             // bt1
             // 
-            this.bt1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt1.BackColor = System.Drawing.Color.SlateBlue;
             this.bt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt1.Location = new System.Drawing.Point(3, 14);
             this.bt1.Name = "bt1";
             this.bt1.Size = new System.Drawing.Size(184, 68);
             this.bt1.TabIndex = 5;
-            this.bt1.Text = "Trà xanh";
+            this.bt1.Text = "Truyện Doramon";
             this.bt1.UseVisualStyleBackColor = false;
             this.bt1.Click += new System.EventHandler(this.bt1_Click);
             // 
             // bt3
             // 
-            this.bt3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3.Location = new System.Drawing.Point(3, 88);
             this.bt3.Name = "bt3";
             this.bt3.Size = new System.Drawing.Size(184, 68);
             this.bt3.TabIndex = 6;
-            this.bt3.Text = "Trà trái cây";
+            this.bt3.Text = "Truyện Naruto";
             this.bt3.UseVisualStyleBackColor = false;
             this.bt3.Click += new System.EventHandler(this.bt3_Click);
             // 
             // bt5
             // 
-            this.bt5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt5.BackColor = System.Drawing.Color.SlateBlue;
             this.bt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt5.Location = new System.Drawing.Point(3, 162);
             this.bt5.Name = "bt5";
             this.bt5.Size = new System.Drawing.Size(184, 68);
             this.bt5.TabIndex = 7;
-            this.bt5.Text = "Trà hoa hồng";
+            this.bt5.Text = "Truyện Yu-Gi-Oh";
             this.bt5.UseVisualStyleBackColor = false;
             this.bt5.Click += new System.EventHandler(this.bt5_Click);
             // 
             // bt7
             // 
-            this.bt7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt7.BackColor = System.Drawing.Color.SlateBlue;
             this.bt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt7.Location = new System.Drawing.Point(3, 236);
             this.bt7.Name = "bt7";
             this.bt7.Size = new System.Drawing.Size(184, 68);
             this.bt7.TabIndex = 8;
-            this.bt7.Text = "Trà lá ";
+            this.bt7.Text = "Truyện Shin";
             this.bt7.UseVisualStyleBackColor = false;
             this.bt7.Click += new System.EventHandler(this.bt7_Click);
             // 
             // bt9
             // 
-            this.bt9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt9.BackColor = System.Drawing.Color.SlateBlue;
             this.bt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt9.Location = new System.Drawing.Point(3, 310);
             this.bt9.Name = "bt9";
             this.bt9.Size = new System.Drawing.Size(184, 68);
             this.bt9.TabIndex = 10;
-            this.bt9.Text = "Trà ô lông";
+            this.bt9.Text = "Truyện HunterxHunter";
             this.bt9.UseVisualStyleBackColor = false;
             this.bt9.Click += new System.EventHandler(this.bt9_Click);
             // 
             // bt2
             // 
-            this.bt2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt2.BackColor = System.Drawing.Color.SlateBlue;
             this.bt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt2.Location = new System.Drawing.Point(193, 14);
             this.bt2.Name = "bt2";
             this.bt2.Size = new System.Drawing.Size(184, 68);
             this.bt2.TabIndex = 11;
-            this.bt2.Text = "Trà thảo dược";
+            this.bt2.Text = "Truyện Conan";
             this.bt2.UseVisualStyleBackColor = false;
             this.bt2.Click += new System.EventHandler(this.bt2_Click);
             // 
             // bt4
             // 
-            this.bt4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt4.BackColor = System.Drawing.Color.SlateBlue;
             this.bt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt4.Location = new System.Drawing.Point(193, 88);
             this.bt4.Name = "bt4";
             this.bt4.Size = new System.Drawing.Size(184, 68);
             this.bt4.TabIndex = 12;
-            this.bt4.Text = "Trà bạc hà";
+            this.bt4.Text = "Truyện Dragonball";
             this.bt4.UseVisualStyleBackColor = false;
             this.bt4.Click += new System.EventHandler(this.bt4_Click);
             // 
             // bt6
             // 
-            this.bt6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt6.BackColor = System.Drawing.Color.SlateBlue;
             this.bt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt6.Location = new System.Drawing.Point(193, 162);
             this.bt6.Name = "bt6";
             this.bt6.Size = new System.Drawing.Size(184, 68);
             this.bt6.TabIndex = 13;
-            this.bt6.Text = "Trà oải hương ";
+            this.bt6.Text = "Truyện Pokemon ";
             this.bt6.UseVisualStyleBackColor = false;
             this.bt6.Click += new System.EventHandler(this.bt6_Click);
             // 
             // bt8
             // 
-            this.bt8.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt8.BackColor = System.Drawing.Color.SlateBlue;
             this.bt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt8.Location = new System.Drawing.Point(193, 236);
             this.bt8.Name = "bt8";
             this.bt8.Size = new System.Drawing.Size(184, 68);
             this.bt8.TabIndex = 14;
-            this.bt8.Text = "Trà Matcha";
+            this.bt8.Text = "Truyện Subasa";
             this.bt8.UseVisualStyleBackColor = false;
             this.bt8.Click += new System.EventHandler(this.bt8_Click);
             // 
             // bt10
             // 
-            this.bt10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt10.BackColor = System.Drawing.Color.SlateBlue;
             this.bt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt10.Location = new System.Drawing.Point(193, 310);
             this.bt10.Name = "bt10";
             this.bt10.Size = new System.Drawing.Size(184, 68);
             this.bt10.TabIndex = 16;
-            this.bt10.Text = "Trà táo đỏ";
+            this.bt10.Text = "Truyện Yaiba";
             this.bt10.UseVisualStyleBackColor = false;
             this.bt10.Click += new System.EventHandler(this.bt10_Click);
             // 
@@ -549,9 +535,9 @@
             this.panel_tra.Controls.Add(this.bt5);
             this.panel_tra.Controls.Add(this.bt3);
             this.panel_tra.Controls.Add(this.bt1);
-            this.panel_tra.Location = new System.Drawing.Point(595, 13);
+            this.panel_tra.Location = new System.Drawing.Point(12, 89);
             this.panel_tra.Name = "panel_tra";
-            this.panel_tra.Size = new System.Drawing.Size(382, 393);
+            this.panel_tra.Size = new System.Drawing.Size(382, 390);
             this.panel_tra.TabIndex = 17;
             this.panel_tra.Visible = false;
             // 
@@ -568,7 +554,7 @@
             this.panel_Soda.Controls.Add(this.bt3_5);
             this.panel_Soda.Controls.Add(this.bt3_3);
             this.panel_Soda.Controls.Add(this.bt3_1);
-            this.panel_Soda.Location = new System.Drawing.Point(595, 13);
+            this.panel_Soda.Location = new System.Drawing.Point(12, 89);
             this.panel_Soda.Name = "panel_Soda";
             this.panel_Soda.Size = new System.Drawing.Size(382, 393);
             this.panel_Soda.TabIndex = 20;
@@ -576,121 +562,121 @@
             // 
             // bt3_10
             // 
-            this.bt3_10.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_10.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_10.Location = new System.Drawing.Point(193, 310);
             this.bt3_10.Name = "bt3_10";
             this.bt3_10.Size = new System.Drawing.Size(184, 68);
             this.bt3_10.TabIndex = 16;
-            this.bt3_10.Text = "soda cam";
+            this.bt3_10.Text = "Tiểu thuyết DaVinci Code";
             this.bt3_10.UseVisualStyleBackColor = false;
             this.bt3_10.Click += new System.EventHandler(this.bt3_10_Click);
             // 
             // bt3_8
             // 
-            this.bt3_8.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_8.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_8.Location = new System.Drawing.Point(193, 236);
             this.bt3_8.Name = "bt3_8";
             this.bt3_8.Size = new System.Drawing.Size(184, 68);
             this.bt3_8.TabIndex = 14;
-            this.bt3_8.Text = "soda kem cherry";
+            this.bt3_8.Text = "Tiểu thuyết Twilight";
             this.bt3_8.UseVisualStyleBackColor = false;
             this.bt3_8.Click += new System.EventHandler(this.bt3_8_Click);
             // 
             // bt3_6
             // 
-            this.bt3_6.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_6.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_6.Location = new System.Drawing.Point(193, 162);
             this.bt3_6.Name = "bt3_6";
             this.bt3_6.Size = new System.Drawing.Size(184, 68);
             this.bt3_6.TabIndex = 13;
-            this.bt3_6.Text = "soda sữa đào";
+            this.bt3_6.Text = "Tiểu thuyết Alice in Wonderland";
             this.bt3_6.UseVisualStyleBackColor = false;
             this.bt3_6.Click += new System.EventHandler(this.bt3_6_Click);
             // 
             // bt3_4
             // 
-            this.bt3_4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_4.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_4.Location = new System.Drawing.Point(193, 88);
             this.bt3_4.Name = "bt3_4";
             this.bt3_4.Size = new System.Drawing.Size(184, 68);
             this.bt3_4.TabIndex = 12;
-            this.bt3_4.Text = "Soda bạc hà";
+            this.bt3_4.Text = "Tiểu thuyết Hunger Game";
             this.bt3_4.UseVisualStyleBackColor = false;
             this.bt3_4.Click += new System.EventHandler(this.bt3_4_Click);
             // 
             // bt3_2
             // 
-            this.bt3_2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_2.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_2.Location = new System.Drawing.Point(193, 14);
             this.bt3_2.Name = "bt3_2";
             this.bt3_2.Size = new System.Drawing.Size(184, 68);
             this.bt3_2.TabIndex = 11;
-            this.bt3_2.Text = "Soda Dưa";
+            this.bt3_2.Text = "Tiểu thuyết Harry Portter";
             this.bt3_2.UseVisualStyleBackColor = false;
             this.bt3_2.Click += new System.EventHandler(this.bt3_2_Click);
             // 
             // bt3_9
             // 
-            this.bt3_9.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_9.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_9.Location = new System.Drawing.Point(3, 310);
             this.bt3_9.Name = "bt3_9";
             this.bt3_9.Size = new System.Drawing.Size(184, 68);
             this.bt3_9.TabIndex = 10;
-            this.bt3_9.Text = "soda xoài";
+            this.bt3_9.Text = "Tiểu thuyết Hannibal";
             this.bt3_9.UseVisualStyleBackColor = false;
             this.bt3_9.Click += new System.EventHandler(this.bt3_9_Click);
             // 
             // bt3_7
             // 
-            this.bt3_7.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_7.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_7.Location = new System.Drawing.Point(3, 236);
             this.bt3_7.Name = "bt3_7";
             this.bt3_7.Size = new System.Drawing.Size(184, 68);
             this.bt3_7.TabIndex = 8;
-            this.bt3_7.Text = "Soda việt quất";
+            this.bt3_7.Text = "Tiểu thuyết Wizard of Oz";
             this.bt3_7.UseVisualStyleBackColor = false;
             this.bt3_7.Click += new System.EventHandler(this.bt3_7_Click);
             // 
             // bt3_5
             // 
-            this.bt3_5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_5.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_5.Location = new System.Drawing.Point(3, 162);
             this.bt3_5.Name = "bt3_5";
             this.bt3_5.Size = new System.Drawing.Size(184, 68);
             this.bt3_5.TabIndex = 7;
-            this.bt3_5.Text = "Soda Blue Ocean";
+            this.bt3_5.Text = "Tiểu thuyết Maze Runner";
             this.bt3_5.UseVisualStyleBackColor = false;
             this.bt3_5.Click += new System.EventHandler(this.bt3_5_Click);
             // 
             // bt3_3
             // 
-            this.bt3_3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_3.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_3.Location = new System.Drawing.Point(3, 88);
             this.bt3_3.Name = "bt3_3";
             this.bt3_3.Size = new System.Drawing.Size(184, 68);
             this.bt3_3.TabIndex = 6;
-            this.bt3_3.Text = "Italian Soda";
+            this.bt3_3.Text = "Tiểu thiết The Lord of the Ring";
             this.bt3_3.UseVisualStyleBackColor = false;
             this.bt3_3.Click += new System.EventHandler(this.bt3_3_Click);
             // 
             // bt3_1
             // 
-            this.bt3_1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bt3_1.BackColor = System.Drawing.Color.SlateBlue;
             this.bt3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt3_1.Location = new System.Drawing.Point(3, 14);
             this.bt3_1.Name = "bt3_1";
             this.bt3_1.Size = new System.Drawing.Size(184, 68);
             this.bt3_1.TabIndex = 5;
-            this.bt3_1.Text = "Soda Mix";
+            this.bt3_1.Text = "Tiểu thuyết 1984";
             this.bt3_1.UseVisualStyleBackColor = false;
             this.bt3_1.Click += new System.EventHandler(this.bt3_1_Click);
             // 
@@ -698,22 +684,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(989, 494);
+            this.Controls.Add(this.bt_Tra);
+            this.Controls.Add(this.bt_TraSua);
             this.Controls.Add(this.panel_tra_sua);
             this.Controls.Add(this.panel_Soda);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_tra);
+            this.Controls.Add(this.bt_Soda);
+            this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Menu";
+            this.Text = "BookStore";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel_tra_sua.ResumeLayout(false);
             this.panel_tra.ResumeLayout(false);
             this.panel_Soda.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -730,7 +721,6 @@
         private System.Windows.Forms.Button bt_Tra;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bt1;
         private System.Windows.Forms.Button bt3;
@@ -754,10 +744,6 @@
         private System.Windows.Forms.Button bt2_3;
         private System.Windows.Forms.Button bt2_1;
         private System.Windows.Forms.Panel panel_tra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Money;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Total;
         private System.Windows.Forms.Panel panel_Soda;
         private System.Windows.Forms.Button bt3_10;
         private System.Windows.Forms.Button bt3_8;
@@ -771,6 +757,10 @@
         private System.Windows.Forms.Button bt3_1;
         private System.Windows.Forms.Button bt_del_;
         private System.Windows.Forms.Button bt_del_all;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Total;
     }
 }
 

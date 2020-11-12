@@ -35,6 +35,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
 
         }
 
@@ -74,7 +88,7 @@ namespace Store
 
 
         Double TienHang = 0;
-        Double GiamGia = 10;
+        Double GiamGia = 0;
         Double TongTien = 0;
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
@@ -102,101 +116,57 @@ namespace Store
 #region btClickPanel
         private void bt1_Click(object sender, EventArgs e)
         {
-            s++;
+            
 
-            dt.Rows.Add("Trà Đào", "1", "30000", "30000");
-            dataGridView1.DataSource = dt;
-
-            TienHang += 30000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
-
+            addRow("Trà Đào", 1, 30000, 30000);
+            
         }
 
         private void bt2_Click(object sender, EventArgs e)
         {
-            s++;
 
-            dt.Rows.Add("Trà Thảo Dược", "1", "25000", "25000");
-            dataGridView1.DataSource = dt;
 
-            TienHang += 25000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Thảo Dược", 1, 25000, 25000);
+            
         }
 
         private void bt2_1_Click(object sender, EventArgs e)
         {
-            s++;
+           
 
-            dt.Rows.Add("Trà Sữa Việt Quất", "1", "25000", "25000");
-            dataGridView1.DataSource = dt;
-
-            TienHang += 25000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Sữa Việt Quất", 1, 25000, 25000);
+            
         }
 
         private void bt2_2_Click(object sender, EventArgs e)
         {
-            s++;
 
-            dt.Rows.Add("Trà Sữa Socola", "1", "25000", "25000");
-            dataGridView1.DataSource = dt;
 
-            TienHang += 25000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Sữa Socola", 1, 25000, 25000);
+            
         }
 
         private void bt2_3_Click(object sender, EventArgs e)
         {
-            s++;
 
-            dt.Rows.Add("Trà Sữa", "1", "23000", "23000");
-            dataGridView1.DataSource = dt;
 
-            TienHang += 23000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Sữa", 1, 23000, 23000);
+            
         }
 
         private void bt2_4_Click(object sender, EventArgs e)
         {
-            s++;
 
-            dt.Rows.Add("Trà Sữa Dâu", "1", "27000", "27000");
-            dataGridView1.DataSource = dt;
-
-            TienHang += 27000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Sữa Dâu", 1, 27000, 27000);
+            
         }
 
         private void bt2_5_Click(object sender, EventArgs e)
         {
-            s++;
+            
 
-            dt.Rows.Add("Trà Sữa Bạc Hà", "1", "25000", "25000");
-            dataGridView1.DataSource = dt;
-
-            TienHang += 25000;
-
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Trà Sữa Bạc Hà", 1, 25000, 25000);
+            
         }
 
         private void bt2_6_Click(object sender, EventArgs e)
@@ -211,6 +181,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt2_7_Click(object sender, EventArgs e)
@@ -225,6 +209,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt2_8_Click(object sender, EventArgs e)
@@ -239,6 +237,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt2_9_Click(object sender, EventArgs e)
@@ -253,6 +265,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt2_10_Click(object sender, EventArgs e)
@@ -267,6 +293,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt3_Click(object sender, EventArgs e)
@@ -281,6 +321,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt4_Click(object sender, EventArgs e)
@@ -295,6 +349,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt5_Click(object sender, EventArgs e)
@@ -309,6 +377,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt6_Click(object sender, EventArgs e)
@@ -323,6 +405,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt7_Click(object sender, EventArgs e)
@@ -337,6 +433,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt8_Click(object sender, EventArgs e)
@@ -351,6 +461,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt9_Click(object sender, EventArgs e)
@@ -365,6 +489,20 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt10_Click(object sender, EventArgs e)
@@ -379,20 +517,26 @@ namespace Store
             richTextBox1.Text = TienHang.ToString();
             TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
+            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            {
+                for (int j = i + 1; j < dt.Rows.Count; j++)
+                {
+                    string b = dt.Rows[j]["Tên Món Nước"].ToString();
+                    if (dt.Rows[i]["Tên Món Nước"].ToString() == b)
+                    {
+                        dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                        s--;
+                        dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                    }
+                }
+            }
         }
 
         private void bt3_1_Click(object sender, EventArgs e)
         {
-            s++;
 
-            dt.Rows.Add("Soda Mix", "1", "30000", "30000");
-            dataGridView1.DataSource = dt;
-
-            TienHang += 30000;
-            
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
+            addRow("Soda Mix", 1, 28000, 28000);
         }
 
         private void bt3_2_Click(object sender, EventArgs e)
@@ -458,7 +602,7 @@ namespace Store
                     dataGridView1.Rows.RemoveAt(cell.RowIndex);
 
                 }
-                dataGridView1.CurrentRow.Selected = false; //cho thằng chọn đấy thành ko chọn
+                
             }
 
         }

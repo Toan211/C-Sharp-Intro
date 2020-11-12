@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -36,10 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dt_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dt_Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dt_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_Scifi = new System.Windows.Forms.Button();
             this.bt_LichSu = new System.Windows.Forms.Button();
             this.bt_truyenTranh = new System.Windows.Forms.Button();
@@ -79,6 +76,10 @@
             this.bt3_5 = new System.Windows.Forms.Button();
             this.bt3_3 = new System.Windows.Forms.Button();
             this.bt3_1 = new System.Windows.Forms.Button();
+            this.dt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,7 +94,7 @@
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(43, 24);
             this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "10";
+            this.richTextBox2.Text = "0";
             // 
             // richTextBox1
             // 
@@ -155,30 +156,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
-            // dt_name
-            // 
-            this.dt_name.HeaderText = "Tên Món Nước";
-            this.dt_name.Name = "dt_name";
-            this.dt_name.Width = 88;
-            // 
-            // dt_count
-            // 
-            this.dt_count.HeaderText = "Số lượng";
-            this.dt_count.Name = "dt_count";
-            this.dt_count.Width = 87;
-            // 
-            // dt_Money
-            // 
-            this.dt_Money.HeaderText = "Đơn Giá";
-            this.dt_Money.Name = "dt_Money";
-            this.dt_Money.Width = 88;
-            // 
-            // dt_Total
-            // 
-            this.dt_Total.HeaderText = "Thành tiền";
-            this.dt_Total.Name = "dt_Total";
-            this.dt_Total.Width = 87;
-            // 
             // bt_Scifi
             // 
             this.bt_Scifi.BackColor = System.Drawing.Color.BlueViolet;
@@ -235,7 +212,7 @@
             // 
             // bt_del_all
             // 
-            this.bt_del_all.BackColor = System.Drawing.Color.Red;
+            this.bt_del_all.BackColor = System.Drawing.Color.DimGray;
             this.bt_del_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_del_all.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.bt_del_all.Location = new System.Drawing.Point(404, 59);
@@ -248,7 +225,7 @@
             // 
             // bt_del_
             // 
-            this.bt_del_.BackColor = System.Drawing.Color.Red;
+            this.bt_del_.BackColor = System.Drawing.Color.DimGray;
             this.bt_del_.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_del_.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.bt_del_.Location = new System.Drawing.Point(404, 19);
@@ -653,18 +630,45 @@
             this.bt3_1.UseVisualStyleBackColor = false;
             this.bt3_1.Click += new System.EventHandler(this.bt3_1_Click);
             // 
+            // dt_name
+            // 
+            this.dt_name.HeaderText = "Tên Sách";
+            this.dt_name.Name = "dt_name";
+            this.dt_name.Width = 88;
+            // 
+            // dt_count
+            // 
+            this.dt_count.HeaderText = "Số lượng";
+            this.dt_count.Name = "dt_count";
+            this.dt_count.Width = 87;
+            // 
+            // dt_Money
+            // 
+            this.dt_Money.HeaderText = "Đơn Giá";
+            this.dt_Money.Name = "dt_Money";
+            this.dt_Money.Width = 88;
+            // 
+            // dt_Total
+            // 
+            this.dt_Total.HeaderText = "Thành tiền";
+            this.dt_Total.Name = "dt_Total";
+            this.dt_Total.Width = 87;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(989, 494);
             this.Controls.Add(this.panel_History);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel_Scifi);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_comic);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Menu";
+            this.Text = "Nhà Sách";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -711,10 +715,6 @@
         private System.Windows.Forms.Button bt2_3;
         private System.Windows.Forms.Button bt2_1;
         private System.Windows.Forms.Panel panel_comic;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Money;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Total;
         private System.Windows.Forms.Panel panel_Scifi;
         private System.Windows.Forms.Button bt3_8;
         private System.Windows.Forms.Button bt3_6;
@@ -727,6 +727,10 @@
         private System.Windows.Forms.Button bt3_1;
         private System.Windows.Forms.Button bt_del_;
         private System.Windows.Forms.Button bt_del_all;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_Total;
     }
 }
 

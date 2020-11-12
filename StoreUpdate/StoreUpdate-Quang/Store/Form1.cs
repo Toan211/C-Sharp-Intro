@@ -18,62 +18,79 @@ namespace Store
         {
             InitializeComponent();
             dataGridView1.Columns.Clear();
-            dt.Columns.Add("Tên Món Nước", typeof(string));
+            dt.Columns.Add("Tên Sách", typeof(string));
             dt.Columns.Add("Số lượng", typeof(int));
             dt.Columns.Add("Đơn GIá", typeof(int));
             dt.Columns.Add("Thành tiền", typeof(int));
 
         }
-
-        int indexRow;
-        int s = 0;
-
+        int c1 = 0;
         void addRow(string Name, int SL, int Single, int Sum)
         {
-            s++;
-            dt.Rows.Add(Name, SL, Single, Sum);
-            dataGridView1.DataSource = dt;
 
-            TienHang += Single;
-            richTextBox1.Text = TienHang.ToString();
-            TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
-            richTextBox3.Text = TongTien.ToString();
-
-        }
-
-        private void button_comic(object sender, EventArgs e)
-        {
-            panel_History.Visible = false;
-            panel_comic.Visible = true;
-            panel_Scifi.Visible = false;
-            bt_truyenTranh.BackColor = Color.SlateBlue;
-            bt_LichSu.BackColor = Color.BlueViolet;
-            bt_Scifi.BackColor = Color.BlueViolet;
-        }
-
-        private void button_LichSu(object sender, EventArgs e)
-        {
-            panel_comic.Visible = false;
-            panel_History.Visible = true;
-            panel_Scifi.Visible = false;
-            bt_LichSu.BackColor = Color.SlateBlue;
-            bt_truyenTranh.BackColor = Color.BlueViolet;
-            bt_Scifi.BackColor = Color.BlueViolet;
-        }
-
-        private void button_scifi(object sender, EventArgs e)
-        {
-            panel_comic.Visible = false;
-            panel_Scifi.Visible = true;
-            panel_History.Visible = false;
+                s++;
+                dt.Rows.Add(Name, SL, Single, Sum);
+                dataGridView1.DataSource = dt;
+                TienHang += Single;
+                richTextBox1.Text = TienHang.ToString();
+                TongTien = TienHang - TienHang * (Convert.ToDouble(richTextBox2.Text) / 100);
+                richTextBox3.Text = TongTien.ToString();
+        
+                for (int i = 0; i < dt.Rows.Count - 1; i++)
+                {
+                    for (int j = i + 1; j < dt.Rows.Count; j++)
+                    {
+                        string b = dt.Rows[j]["Tên Sách"].ToString();
+                        if (dt.Rows[i]["Tên Sách"].ToString() == b)
+                        {
+                            dt.Rows[i]["Số lượng"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) + Convert.ToInt32(dataGridView1.Rows[j].Cells[1].Value);
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[j]);
+                            s--;
+                            dt.Rows[i]["Thành tiền"] = Convert.ToInt32(dataGridView1.Rows[i].Cells[1].Value) * Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value);
+                        }
+                    }
+                }
             
-            bt_LichSu.BackColor = Color.BlueViolet;
-            bt_truyenTranh.BackColor = Color.BlueViolet;
-            bt_Scifi.BackColor = Color.SlateBlue;
+            
         }
+
+        private void button_Tra(object sender, EventArgs e)
+        {
+            panel_tra_sua.Visible = false;
+            panel_tra.Visible = true;
+            panel_Soda.Visible = false;
+            bt_Tra.BackColor = Color.DeepSkyBlue;
+            bt_TraSua.BackColor = Color.Aqua;
+            bt_Soda.BackColor = Color.Aqua;
+        }
+
+        private void button_TraSua(object sender, EventArgs e)
+        {
+            panel_tra.Visible = false;
+            panel_tra_sua.Visible = true;
+            panel_Soda.Visible = false;
+            bt_TraSua.BackColor = Color.DeepSkyBlue;
+            bt_Tra.BackColor = Color.Aqua;
+            bt_Soda.BackColor = Color.Aqua;
+        }
+
+        private void bt_Soda_Click(object sender, EventArgs e)
+        {
+            panel_tra.Visible = false;
+            panel_Soda.Visible = true;
+            panel_tra_sua.Visible = false;
+            
+            bt_TraSua.BackColor = Color.Aqua;
+            bt_Tra.BackColor = Color.Aqua;
+            bt_Soda.BackColor = Color.DeepSkyBlue;
+        }
+
+
+        int s = 0;
+
 
         Double TienHang = 0;
-        Double GiamGia = 10;
+        Double GiamGia = 0;
         Double TongTien = 0;
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
@@ -95,150 +112,165 @@ namespace Store
             TongTien = TienHang2 - TienHang2 * (Convert.ToDouble(richTextBox2.Text) / 100);
             richTextBox3.Text = TongTien.ToString();
             TienHang = Int32.Parse(richTextBox1.Text);
-            
+            //txt_temp.Text = TienHang.ToString();
         }
 
+       
 #region btClickPanel
         private void bt1_Click(object sender, EventArgs e)
-        {
-            addRow("Thanh gươm diệt quỷ 1", 1, 30000, 30000);
-
+        {   
+            addRow("Truyện Doramon", 1, 30000, 30000);
         }
 
         private void bt2_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 2", 1, 30000, 30000);
+            addRow("Truyện Connan", 1, 25000, 25000);
         }
 
         private void bt2_1_Click(object sender, EventArgs e)
         {
-            addRow("Lịch sử Việt Nam", 1, 230000, 230000);
+            addRow("Sách Toán", 1, 25000, 25000);
         }
 
         private void bt2_2_Click(object sender, EventArgs e)
         {
-            addRow("Lịch sử Thế giới", 1, 147000, 147000);
+            addRow("Sách Văn", 1, 25000, 25000);
         }
 
         private void bt2_3_Click(object sender, EventArgs e)
         {
-            addRow("Mein Kampf", 1, 317000, 317000);
+            addRow("Sách Lý", 1, 23000, 23000);
         }
 
         private void bt2_4_Click(object sender, EventArgs e)
         {
-            addRow("Tiểu sử Hồ Chí Minh", 1, 275000, 275000);
+            addRow("Sách Hóa học", 1, 27000, 27000);
         }
 
         private void bt2_5_Click(object sender, EventArgs e)
         {
-            addRow("Đại Việt sử ký toàn thư", 1, 235000, 235000);
+            addRow("Sách Anh văn", 1, 25000, 25000);
         }
 
         private void bt2_6_Click(object sender, EventArgs e)
         {
-            addRow("The Second world war", 1, 279000, 279000);
+            addRow("Sách Lịch sử", 1, 29000, 29000);
         }
 
         private void bt2_7_Click(object sender, EventArgs e)
         {
-            addRow("Perfect Spy: The Incredible Double Life of Pham Xuan An", 1, 260000, 260000);
+            addRow("Sách Địa lý", 1, 28000, 28000);
         }
 
         private void bt2_8_Click(object sender, EventArgs e)
         {
-            addRow("Sử thi Gilgamesh", 1, 179000, 179000);
+            addRow("Sách Tin học", 1, 26000, 26000);
         }
 
         private void bt2_9_Click(object sender, EventArgs e)
         {
-            addRow("Sapiens: Lược Sử Loài Người", 1, 125500, 125500);
+            addRow("Sách Sinh học", 1, 25000, 25000);
+        }
+
+        private void bt2_10_Click(object sender, EventArgs e)
+        {
+            addRow("Sách Mỹ thuật", 1, 25000, 25000);
         }
 
         private void bt3_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 3", 1, 30000, 30000);
+            addRow("Truyện Naruto", 1, 22000, 22000);
         }
 
         private void bt4_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 4", 1, 30000, 30000);
+            addRow("Truyện Dragonball", 1, 25000, 25000);
         }
 
         private void bt5_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 5", 1, 30000, 30000);
+            addRow("Truyện Tu-Gi-Oh", 1, 30000, 30000);
         }
 
         private void bt6_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 6", 1, 30000, 30000);
+            addRow("Truyện Pokemon", 1, 33000, 33000);
         }
 
         private void bt7_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 7", 1, 30000, 30000);
+            addRow("Truyện Shin", 1, 22000, 22000);
         }
 
         private void bt8_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 8", 1, 30000, 30000);
+            addRow("truyện Subasa", 1, 30000, 30000);
         }
 
         private void bt9_Click(object sender, EventArgs e)
         {
-            addRow("Thanh gươm diệt quỷ 9", 1, 30000, 30000);
+            addRow("Truyện HunterxHunter", 1, 35000, 35000);
+        }
+
+        private void bt10_Click(object sender, EventArgs e)
+        {
+            addRow("Truyện Yasiba", 1, 25000, 25000);
         }
 
         private void bt3_1_Click(object sender, EventArgs e)
         {
-            addRow("Tanya chiến ký 1", 1, 101200, 101200);
+            addRow("Tiểu thuyết 1984", 1, 120000, 120000);
         }
 
         private void bt3_2_Click(object sender, EventArgs e)
         {
-            addRow("Cô gái văn chương", 1, 99000, 99000);
+            addRow("Tiểu thuyết Harry Portter", 1, 145000, 145000);
         }
 
         private void bt3_3_Click(object sender, EventArgs e)
         {
-            addRow("Another tập 1", 1, 49000, 49000);
+            addRow("Tiểu thuyết The Lord of the Ring", 1, 130000, 130000);
         }
 
         private void bt3_4_Click(object sender, EventArgs e)
         {
-            addRow("Mất tư cách làm người", 1,79900, 79900);
+            addRow("Tiểu thuyết Hunger Game", 1, 125000, 125000);
         }
 
         private void bt3_5_Click(object sender, EventArgs e)
         {
-            addRow("Another tập 2", 1, 49000, 49000);
+            addRow("Tiểu thuyết Maze Runner", 1, 115000, 115000);
         }
 
         private void bt3_6_Click(object sender, EventArgs e)
         {
-            addRow("Đồi gió hú", 1, 86000, 86000);
+            addRow("Tiểu thiết Alice in Wonderland", 1, 120000, 120000);
         }
 
         private void bt3_7_Click(object sender, EventArgs e)
         {
-            addRow("Tôi thấy hoa vàng trên cỏ xanht", 1, 119500, 119500);
+            addRow("Tiểu thuyết Wizard of Oz", 1, 130000, 130000);
         }
 
         private void bt3_8_Click(object sender, EventArgs e)
         {
-            addRow("Mộ đom đóm", 1, 57600, 57600);
+            addRow("Tiểu thuyết Twilight", 1, 100000, 100000);
         }
 
         private void bt3_9_Click(object sender, EventArgs e)
         {
-            addRow("Những người khốn khổ (bổ 2 quyển)", 1, 246900, 246900);
+            addRow("Tiểu thuyết Hannible", 1, 125000, 125000);
         }
 
-#endregion
+        private void bt3_10_Click(object sender, EventArgs e)
+        {
+            addRow("Tiểu thuyết DaVinci Code", 1, 135000, 135000);
+        }
+
+        #endregion
         private void bt_del__Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell.Selected == true) 
+            if (dataGridView1.CurrentCell.Selected == true)
             {
                 s--;
                 double TienHang2 = 0;
@@ -249,12 +281,10 @@ namespace Store
                     richTextBox3.Text = TongTien.ToString();
                     TienHang -= Convert.ToDouble(dataGridView1.Rows[cell.RowIndex].Cells[3].Value);
                     richTextBox1.Text = TienHang.ToString();
-
                     dataGridView1.Rows.RemoveAt(cell.RowIndex);
-                    
                 }
-                dataGridView1.CurrentRow.Selected = false; 
-            }    
+                
+            }
         }
 
         private void bt_del_all_Click(object sender, EventArgs e)
@@ -268,6 +298,6 @@ namespace Store
             richTextBox3.Text = TongTien.ToString();
         }
 
-        
+
     }
 }

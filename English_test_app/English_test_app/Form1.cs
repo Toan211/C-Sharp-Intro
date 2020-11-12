@@ -174,12 +174,12 @@ namespace English_test_app
             //    }
 
 
-        }    
+        }
 
-           
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
+        }
     }
 
         /*ý tưởng: như trên
