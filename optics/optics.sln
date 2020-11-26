@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "optics", "optics\optics.csproj", "{CFFC9DCA-2754-4F01-A5DE-9DA1A5996646}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFFC9DCA-2754-4F01-A5DE-9DA1A5996646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFC9DCA-2754-4F01-A5DE-9DA1A5996646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFC9DCA-2754-4F01-A5DE-9DA1A5996646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFC9DCA-2754-4F01-A5DE-9DA1A5996646}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {889F7C22-446D-4CB4-8FB8-D35BAAD1C07B}
+	EndGlobalSection
+EndGlobal
